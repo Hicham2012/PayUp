@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+.nav {
+    background-color: #FFCCB6;
+    height: 70px;
+    position: fixed;
+    top: 0;
+    border-left: 1px solid #181818;
+    border-bottom: 1px solid #181818;
+    border-right: 1px solid #181818;
+    transition: all 300ms ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99;
+}
+
+.ul {
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 100%;
+    gap: 0%;
+    grid-template-areas: 'home companies invoice address';
+}
+
+.li {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.li:nth-child(1) {
+    grid-area: home;
+    font-size: 1.5em
+}
+
+.li:nth-child(2) {
+    grid-area: companies;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.li:nth-child(3) {
+    grid-area: invoice;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.li:nth-child(4) {
+    grid-area: address;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.li>p {
+    transition: all 50ms ease;
+}
+
+.li:nth-child(2) {
+    cursor: not-allowed
+}
+
+.wallet {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.wallet>p {
+    font-size: 1.2rem;
+}
+
+.wallet>div {
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1077912145813045278/down-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    width: 20px;
+    height: 30px;
+}
+
+.options {
+    display: grid;
+    width: 27%;
+    position: absolute;
+    background-color: #FFCCB6;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #181818;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #212121;
+}
+
+.options>span:nth-child(1) {
+    border-bottom: 1px solid #181818;
+}
+
+.options>span:nth-child(2) {
+    border-radius: 0 0 10px 10px;
+}
+
+.options>span:nth-child(1):hover,
+.options>span:nth-child(2):hover {
+    background-color: #FFDDCE;
+}
+
+.profile {
+    position: fixed;
+    top: 25%;
+    background-color: #FFDDCE;
+    border: 1px solid #181818;
+    width: 25%;
+    height: 35%;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    color: #181818;
+    font-family: 'Inter';
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.profile>h1,
+.profile>div>div>label {
+    color: #181818;
+    font-family: 'Inter';
+}
+
+.profile>div>div>label {
+    display: grid;
+}
+
+.profile>div>div>input {
+    background: white;
+    color: #181818;
+    border: .5px solid #212121;
+    height: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.profile>div>input {
+    background-color: #181818;
+    border: .5px solid #212121;
+    padding: 2% 0%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.profile>div {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    height: 100%;
+}

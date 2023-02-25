@@ -1,0 +1,35 @@
+.footer {
+    z-index: 999;
+    color: red;
+    display: flex;
+    /* position: absolute;
+    bottom: 0%; */
+    border-top: 1px solid #181818;
+    width: 100%;
+    height: 250px;
+    background: #FFCCB6;
+    /* background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1076852145699164210/Frame_12.png); */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.rights {
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    line-height: 30px;
+    text-align: center;
+    color: #212121;
+}
+
+.logo {
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1076848364227940413/logo.png);
+    width: 20%;
+    height: 40%;
+    /* border: 1px solid black; */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}

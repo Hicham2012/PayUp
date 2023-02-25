@@ -1,0 +1,45 @@
+{
+    "contracts": {
+        "FungibleToken": {
+            "source": "./cadence/contracts/tokens/FungibleToken.cdc",
+            "aliases": {
+                "testnet": "0x9a0766d93b6608b7"
+            }
+        },
+        "MetadataViews": {
+            "source": "./cadence/contracts/interfaces/MetadataViews.cdc",
+            "aliases": {
+                "testnet": "0x631e88ae7f1d7c20"
+            }
+        },
+        "NonFungibleToken": {
+            "source": "./cadence/contracts/interfaces/NonFungibleToken.cdc",
+            "aliases": {
+                "testnet": "0x631e88ae7f1d7c20"
+            }
+        },
+        "PayUpNFT": "./cadence/contracts/PayUpNFT.cdc"
+    },
+    "networks": {
+        "emulator": "127.0.0.1:3569",
+        "mainnet": "access.mainnet.nodes.onflow.org:9000",
+        "testnet": "access.devnet.nodes.onflow.org:9000"
+    },
+    "accounts": {
+        "emulator-account": {
+            "address": "f8d6e0586b0a20c7",
+            "key": "170c8ed9980ce75b448910e43cc0bfacf9633a5341f9f07817d19020202ca2e9"
+        },
+        "testnet": {
+            "address": "ea3d5a66653f8acf",
+            "key": "af739dde8a104b17d1c103e26d16f7a1a010c1769c823703a2949a556b2c1d17"
+        }
+    },
+    "deployments": {
+        "testnet": {
+            "testnet": [
+                "PayUpNFT"
+            ]
+        }
+    }
+}

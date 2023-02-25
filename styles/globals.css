@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+main {
+    background-color: #FFD4C1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+details {
+    /* background-color: #303030; */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.4em;
+    line-height: 33px;
+    /* identical to box height */
+    color: #1D1D1D;
+    border-bottom: 1px solid black;
+    width: 80%;
+    /* height: 27%; */
+    align-items: center;
+}
+
+summary {
+    padding: .5em 1.3rem;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    transition: height 1s ease;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary:after {
+    content: '';
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-image: url(https://cdn.discordapp.com/attachments/941095160517894185/1076560565696208986/Frame_11.png);
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #FFD4C1;
+    transition: all 100ms linear;
+    border: 1px solid #181818;
+}
+
+details[open] summary {
+    /* border-bottom: 1px solid #aaa; */
+    margin-bottom: .5em;
+}
+
+details[open] summary:after {
+    transform: rotate(45deg)
+}
+
+details[open] div {
+    padding: .5em 1em;
+    background-color: #FFD4C1;
+}
+
+details:nth-child(4) {
+    border: none;
+}
+
+@keyframes dots {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 14%;
+    }
+}
+
+@keyframes bots {
+    from {
+        width: 14%;
+    }
+    to {
+        width: 0%;
+    }
+}
