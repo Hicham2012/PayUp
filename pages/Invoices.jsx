@@ -605,9 +605,11 @@ console.log(invobj.receiver.email.replace(' ', ''))
           /> <br /> <br />
         </form>
         <div className={invoice.but}>
-        <PDFDownloadLink className={invoice.but1} document={<Quixote />} fileName="invoice.pdf">
-            {({ blob, url, loading, error }) => (loading ? 'Download PDF' : 'Download PDF')}
-        </PDFDownloadLink>
+        <div suppressHydrationWarning={true}>
+          {process.browser && <PDFDownloadLink className={invoice.but1} document={<Quixote />} fileName="invoice.pdf">
+              {({ blob, url, loading, error }) => (loading ? 'Download PDF' : 'Download PDF')}
+          </PDFDownloadLink>}
+        </div>
           
          {!isMinted ? <button onMouseEnter={checkForm} onClick={isvalid ? MintInvo : null} style={{
             cursor: isvalid ? 'pointer' : 'not-allowed',
