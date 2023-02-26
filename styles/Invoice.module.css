@@ -60,7 +60,7 @@
 }
 
 .but>button,
-.but1,
+.but>div,
 .form>div>input {
     background: #FFD4C1;
     border: 1px solid #000000;
@@ -70,12 +70,20 @@
     font-weight: 500;
     font-size: 1.3rem;
     line-height: 44px;
-    /* identical to box height */
     text-align: center;
     color: #000000;
     padding: 0px 20px;
 }
 
+.but>div {
+    cursor: pointer;
+}
+
+.but>button:hover,
+.but>div:hover {
+    background: #FFDDCE;
+    transition: all 50ms ease;
+}
 
 /* Popup */
 
