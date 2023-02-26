@@ -179,7 +179,8 @@ export default function Header(props) {
            
             <p style={{
           color: '#181818',
-          opacity: ishovered === '' ? '1' : ishovered !== 'connect' ? '.85' : '1'
+          opacity: ishovered === '' ? '1' : ishovered !== 'connect' ? '.85' : '1',
+          marginTop: '2%'
         }}>
               {user.addr}
             </p>
