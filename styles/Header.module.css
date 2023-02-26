@@ -125,8 +125,95 @@
     height: 35%;
     align-items: center;
     flex-direction: column;
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 10px;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 20% 20%;
+    gap: 10%;
+    grid-template-areas: 'email' 'name' 'submit';
+    justify-content: center;
+    align-items: center;
+}
+
+.profileemail {
+    grid-area: email;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* align-content: center; */
+    padding-left: 2%;
+    /* align-items: center; */
+}
+
+.profileemail>label {
+    align-items: left;
+    color: #181818;
+    font-family: 'Inter';
+    font-size: 1.1rem;
+}
+
+.profileemail>input {
+    width: 80%;
+    background: white;
+    color: #181818;
+    border: .5px solid #212121;
+    height: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.profilename {
+    grid-area: name;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    /* align-content: center; */
+    padding-left: 2%;
+}
+
+.profilename>label {
+    align-items: left;
+    color: #181818;
+    font-family: 'Inter';
+    font-size: 1.1rem;
+}
+
+.profilename>input {
+    width: 80%;
+    background: white;
+    color: #181818;
+    border: .5px solid #212121;
+    height: 17px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: .9em;
+}
+
+.profilesubmit {
+    grid-area: submit;
+    /* align-items: center; */
+    /* align-content: center; */
+    /* padding-left: 2%; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.profilesubmit>input {
+    background-color: #181818;
+    border: .5px solid #212121;
+    padding: 2% 0%;
+    font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    color: white;
+    width: 80%;
 }
 
 .close {
@@ -148,35 +235,5 @@
 .profile>div>div>label {
     color: #181818;
     font-family: 'Inter';
-}
-
-.profile>div>div>label {
-    display: grid;
-}
-
-.profile>div>div>input {
-    background: white;
-    color: #181818;
-    border: .5px solid #212121;
-    height: 17px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: .9em;
-}
-
-.profile>div>input {
-    background-color: #181818;
-    border: .5px solid #212121;
-    padding: 2% 0%;
-    font-family: 'Inter', sans-serif;
-    font-size: 1em;
-    cursor: pointer;
-}
-
-.profile>div {
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    height: 100%;
+    font-size: 1.1rem;
 }
