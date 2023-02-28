@@ -1,9 +1,10 @@
 import React from 'react'
 import styles from '@/styles/Header.module.css'
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useMemo} from 'react'
 import Link from 'next/link'
 import * as fcl from '@onflow/fcl'
 import '@/flow/config'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 
 export default function Header(props) {
@@ -13,7 +14,13 @@ export default function Header(props) {
   const [user, setUser] = useState({loggedIn: null})
   const [isClicked, setIsClicked] = useState(false)
   const [profile, setProfile] = useState(false)
-  
+  const { data: session } = useSession()
+  const [sign , setSign] = useState(false)
+ const hola = useMemo(() => { return hello(sign)}, [sign])
+ console.log(hola)
+  // const memorize = useMemo(() => memorize(sign), [sign])
+  // console.log(memorize)
+ 
   const [allinfo, setAllInfo] = useState({
     email: '',
     name: ''
@@ -26,7 +33,7 @@ export default function Header(props) {
   // console.log(profileAll)
   
   useEffect(() => fcl.currentUser.subscribe(setUser), [])
-  console.log()
+  // console.log()
   
   useEffect(() => {
     return () => {
@@ -95,8 +102,56 @@ export default function Header(props) {
       const leave = async() => {
         const logout = await fcl.unauthenticate()
         const closeTab = await setIsClicked(false)
+        const Out = await signOut()
+        const sigg = await setSign(false)
       }
-  
+
+      const login = async() => {
+        const In = await signIn()
+        const ok = await setSign(prevSign => !prevSign)
+        
+      }
+
+      
+      const logout = async() => {
+        const Out = await signOut()
+        const ok = await setSign(prevSign => !prevSign)
+        
+      }
+function change() {
+  setAllInfo()
+}
+      console.log(allinfo)
+      // console.log(session.user.email)
+      useEffect(() => {
+        if (hola) {
+          const save = setAllInfo(prevInfo => {
+          
+            return {
+              ...prevInfo,
+              name: session.user.name,
+              email: session.user.email
+            }
+        })
+        } 
+      }, [hola])
+      // useEffect(() => {
+      //   if(sign) {
+
+      //   }
+      // }, [])
+      // useEffect(() => {
+      //   if (isStart) {
+      //     const timer = setInterval(() => {
+      //       if (count > 0) {
+      //         setCount(count - 1)
+      //       } else {
+      //         setCount('Times up');
+      //         clearInterval(timer);
+      //       }
+      //     }, 1000);
+      //   }
+      // }, [isStart]);
   return (
     <nav
       className={styles.nav}
@@ -113,10 +168,9 @@ export default function Header(props) {
         <li className={styles.li} 
           onMouseEnter={() => setIsHovered('home')}
           onMouseLeave={() => setIsHovered('')}
-          onClick={() => setBorder('home')}
         >
           <Link href="/">
-            <p style={{
+            <p onClick={() => setBorder('home')} style={{
           borderBottom: border === 'home' ? '1px solid #181818' : 'none',
           color: '#181818',
           opacity: ishovered === '' ? '1' : ishovered !== 'home' ? '.85' : '1'
@@ -141,13 +195,12 @@ export default function Header(props) {
         <li className={styles.li}
           onMouseEnter={() => setIsHovered('invoices')}
           onMouseLeave={() => setIsHovered('')}
-          onClick={() => setBorder('invo')}
         >
           { user.addr && allinfo.email.length > 0 && allinfo.name.length > 0 ?  <Link href={{
               pathname: '/Invoices',
               query: profileAll
               }}>
-              <p style={{
+              <p onClick={() => setBorder('invo')} style={{
             borderBottom: border === 'invo' ? '1px solid #181818' : 'none',
             color: '#181818',
             opacity: ishovered === '' ? '1' : ishovered !== 'invoices' ? '.85' : '1'
@@ -173,7 +226,8 @@ export default function Header(props) {
           opacity: ishovered === '' ? '1' : ishovered !== 'connect' ? '.85' : '1'
         }}>
           Connect wallet
-        </p> : 
+        </p> :
+         
         <div>
           <div className={styles.wallet} onClick={() => setIsClicked(prevClicked => !prevClicked)}>
            
@@ -202,34 +256,19 @@ export default function Header(props) {
         display: profile ? 'flex' : 'none'
       }}>
 
-        <h1>Enter profile info</h1>
-        <div>
+        {session ? <h1>Welcome, {session.user.name}</h1> : <h1>Enter profile info</h1>}
+        <div className={styles.ahm}>
         <div onClick={() => setProfile(false)} className={styles.close}>✖</div>
-        <div>
-          <label htmlFor="">Email:</label>
-          <input type="text" required onChange={(e) => { setAllInfo(
-            prevInfo => {
-              return {
-                ...prevInfo,
-                email: e.target.value
-              }
-            }
-          )}}/>
-        </div>
-        <div>
-          <label htmlFor="">Full name:</label>
-          <input type="text" required onChange={(e) => { setAllInfo(
-            prevInfo => {
-              return {
-                ...prevInfo,
-                name: e.target.value
-              }
-            }
-          )}}/>
-        </div>
-        <input type="submit" value="save" onClick={() => setProfile(false)}/>
+      
+        {session ? <button className={styles.profilesubmit} onClick={signOut}>Sign out</button> : <button className={styles.profilesubmit} onClick={signIn}>Sign in</button>}
+        <button className={styles.save} onClick={() => setSign(true)}>{!sign ? 'save' : 'saved'}</button>
+        
         </div>
       </div>
     </nav>
   )
+}
+
+function hello(x) {
+  return x
 }
