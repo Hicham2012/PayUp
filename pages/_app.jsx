@@ -3,8 +3,9 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import React from 'react'
 import {useEffect, useState} from 'react'
+import {SessionProvider} from 'next-auth/react'
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, session }) {
     const [clientheight, setClientWindowHeight] = useState()
     const [plus, setPlus] = useState()
     const handleScroll = () => {
@@ -19,19 +20,21 @@ export default function App({ Component, pageProps }) {
 
     return(
         <>
-            <main style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
-    }}>
-                <Header
-      clientheight={clientheight} 
-      plus={plus}
-    />
-                <Component {...pageProps } />
-            </main>
-            <Footer />
-
+        <SessionProvider session={session}>
+          <main style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <Header
+              clientheight={clientheight} 
+              plus={plus}
+            />
+            
+            <Component {...pageProps } />
+          </main>
+          <Footer />
+          </SessionProvider>
         </>
     ) 
     
