@@ -17,7 +17,7 @@ export default function Header(props) {
   const { data: session } = useSession()
   const [sign , setSign] = useState(false)
  const hola = useMemo(() => { return hello(sign)}, [sign])
- console.log(hola)
+//  console.log(hola)
   // const memorize = useMemo(() => memorize(sign), [sign])
   // console.log(memorize)
  
@@ -121,7 +121,7 @@ export default function Header(props) {
 function change() {
   setAllInfo()
 }
-      console.log(allinfo)
+//       console.log(allinfo)
       // console.log(session.user.email)
       useEffect(() => {
         if (hola) {
