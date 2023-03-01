@@ -540,7 +540,7 @@ console.log(invobj.receiver.email.replace(' ', ''))
                 receiver:{
                   name: e.target.value,
                   address: '0xac7e951a234080e3',
-                  email: `${e.target.value}gmail.com`
+                  email: `${e.target.value}@gmail.com`
 
                 }
               }
