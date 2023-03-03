@@ -8,5 +8,8 @@ export default NextAuth({
             clientSecret: process.env.GOOGLE_SECRET
         })
     ],
+    theme: {
+        colorScheme: "light",
+    }
     secret: process.env.JWT_SECRET
 })
