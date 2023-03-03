@@ -10,6 +10,6 @@ export default NextAuth({
     ],
     theme: {
         colorScheme: "light",
-    }
+    },
     secret: process.env.JWT_SECRET
 })
