@@ -9,7 +9,7 @@
     height: 780vh;
 }
 
-home::selection{
+.home::selection{
     background-color: #212121;
     color: #FFD4C1;
 }
