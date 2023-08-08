@@ -82,7 +82,11 @@
     text-align: center;
     justify-content: center;
 }
-.cadre::selection {
+.first::selection,
+.second::selection,
+.third::selection,
+.forth::selection,
+.fifth::selection{
     background-color: #212121;
     color: #FFD4C1;
 }
