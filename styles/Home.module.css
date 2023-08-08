@@ -9,6 +9,11 @@
     height: 780vh;
 }
 
+home::selection{
+    background-color: #212121;
+    color: #FFD4C1;
+}
+
 .logo,
 .cadre .info {
     scroll-snap-align: start;
@@ -81,14 +86,6 @@
     left: 46.6%;
     text-align: center;
     justify-content: center;
-}
-.first::selection,
-.second::selection,
-.third::selection,
-.forth::selection,
-.fifth::selection{
-    background-color: #212121;
-    color: #FFD4C1;
 }
 
 .first,
