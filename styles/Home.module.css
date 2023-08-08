@@ -82,6 +82,10 @@
     text-align: center;
     justify-content: center;
 }
+.cadre::selection {
+    background-color: #212121;
+    color: #FFD4C1;
+}
 
 .first,
 .second,
