@@ -17,7 +17,7 @@ export default function Home(props) {
         position: props.clientheight >= 6.3 && props.clientheight < 35 ? 'fixed' : 'absolute',
         top: props.clientheight >= 6.3 && props.clientheight < 35  ? '5%' : props.clientheight >= 35 ? '255%' : '50%',
         dislpay: props.clientheight >= 46 ? 'none' : '',
-        overflow: 'hidden';
+        overflow: 'hidden',
       }}>
         {/* No worrying */}
         <div className={styles.first} style={{
