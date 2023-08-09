@@ -17,7 +17,9 @@ h1::selection,
 h2::selection,
 h3::selection,
 h4::selection,
-div::selection {
+div::selection,
+summary::selection,
+a::selection {
     background-color: #212121;
     color: #FFD4C1;
 }
