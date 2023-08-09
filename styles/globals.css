@@ -11,6 +11,11 @@ body {
     scroll-behavior: smooth;
 }
 
+html::selection {
+    background-color: #212121;
+    color: #FFD4C1;
+}
+
 main {
     background-color: #FFD4C1;
 }
