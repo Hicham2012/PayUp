@@ -11,7 +11,13 @@ body {
     scroll-behavior: smooth;
 }
 
-html::selection {
+p::selection,
+span::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+div::selection {
     background-color: #212121;
     color: #FFD4C1;
 }
