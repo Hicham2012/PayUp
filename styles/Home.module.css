@@ -9,11 +9,6 @@
     height: 780vh;
 }
 
-.home::selection{
-    background-color: #212121;
-    color: #FFD4C1;
-}
-
 .logo,
 .cadre .info {
     scroll-snap-align: start;
@@ -60,6 +55,11 @@
     bottom: 45%;
 }
 
+.logo1::selection,
+.logo2::selection {
+    background-color: #212121;
+    color: #FFD4C1;
+}
 
 /* hero section */
 
