@@ -61,8 +61,7 @@
 .second::selection,
 .third::selection,
 .forth::selection,
-.fifth::selection,
-.home {
+.fifth::selection {
     background-color: #212121;
     color: #FFD4C1;
 }
