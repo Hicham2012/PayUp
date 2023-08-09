@@ -57,7 +57,11 @@
 
 .logo1::selection,
 .logo2::selection,
-span::selection, 
+.first::selection,
+.second::selection,
+.third::selection,
+.forth::selection,
+.fifth::selection,
 p::selection,
 h1::selection,
 h2::selection,
