@@ -56,17 +56,7 @@
 }
 
 .logo1::selection,
-.logo2::selection,
-.first::selection,
-.second::selection,
-.third::selection,
-.forth::selection,
-.fifth::selection,
-p::selection,
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection {
+.logo2::selection {
     background-color: #212121;
     color: #FFD4C1;
 }
