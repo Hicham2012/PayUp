@@ -56,7 +56,13 @@
 }
 
 .logo1::selection,
-.logo2::selection {
+.logo2::selection,
+span::selection, 
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection {
     background-color: #212121;
     color: #FFD4C1;
 }
